@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "."
+    ],
+    "graphs": {
+        "my_agent": "./ava-agent/src/ai_companion/graph/graph.py:graph"
+    },
+    "env": ".env",
+    "python_version": "3.12",
+    "dockerfile_lines": []
+}

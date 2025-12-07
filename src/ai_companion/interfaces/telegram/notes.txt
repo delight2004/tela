@@ -1,0 +1,34 @@
+# When response_type == "audio", the generate_final_response_node converts the text response to speech using ElevenLabs TTS API. nodes.py:77-87 The synthesized audio is stored in the audio_buffer field of the state.
+# the output format can be either text or audio.
+# All three handlers follow the same two-step process:
+
+#Preprocess: Convert the input to text format
+#Pass to graph: Call get_agent_response() with the text payload
+
+# you need to handle the telegram webhooks coz lambda function does that i.e update.message things
+
+# All three handlers follow the same two-step process:
+
+#Preprocess: Convert the input to text format
+#Pass to graph: Call get_agent_response() with the text payload
+
+
+#All three handlers follow the same two-step process:
+
+#Preprocess: Convert the input to text format
+#Pass to graph: Call get_agent_response() with the text payload
+
+#Both integrations would share the same underlying architecture:
+
+#Webhook endpoint - You'd still need a FastAPI endpoint to receive incoming messages webhook_endpoint.py:1-6
+#Message processing - The same LangGraph agent workflow would handle messages whatsapp_response.py:69-77
+#Memory systems - Both would use the same SQLite short-term memory and Qdrant long-term memory
+#Media handling - Similar patterns for processing audio, images, and text whatsapp_response.py:50-67
+
+# Different API structure - Telegram uses a different webhook payload format than WhatsApp's Graph API whatsapp_response.py:42-47
+#Different authentication - Telegram uses bot tokens instead of WhatsApp's WHATSAPP_TOKEN and WHATSAPP_PHONE_NUMBER_ID whatsapp_response.py:27-28
+#Different verification - Telegram doesn't use the GET request verification pattern that WhatsApp requires whatsapp_response.py:35-39
+#Different media APIs - Telegram's getFile and file download methods differ from WhatsApp's media handling whatsapp_response.py:111-124
+#Different response format - Telegram's sendMessage, sendAudio, and sendPhoto methods have different parameters than WhatsApp's messaging API whatsapp_response.py:152-201
+
+
